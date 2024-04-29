@@ -19,18 +19,16 @@ function App() {
   };
 
   const toggleTooltipVisibilityBtn1 = () => {
-    if (isElOverFlown("btn1")){
-      setbtn1TooltipIsVisible(true)
+    if (isElOverFlown("btn1")) {
+      setbtn1TooltipIsVisible(true);
     }
   };
 
   const toggleTooltipVisibilityBtn2 = () => {
-    if (isElOverFlown("btn2")){
-      setbtn2TooltipIsVisible(true)
+    if (isElOverFlown("btn2")) {
+      setbtn2TooltipIsVisible(true);
     }
-
   };
-
 
   return (
     <>
@@ -40,7 +38,9 @@ function App() {
             className="btn"
             id="btn1"
             onMouseEnter={toggleTooltipVisibilityBtn1}
-            onMouseLeave={() => {setbtn1TooltipIsVisible(false)}}
+            onMouseLeave={() => {
+              setbtn1TooltipIsVisible(false);
+            }}
           >
             {btn1Text}
             {btn1TooltipIsVisible && (
@@ -51,7 +51,9 @@ function App() {
             className="btn"
             id="btn2"
             onMouseEnter={toggleTooltipVisibilityBtn2}
-            onMouseLeave={() => {setbtn2TooltipIsVisible(false)}}
+            onMouseLeave={() => {
+              setbtn2TooltipIsVisible(false);
+            }}
           >
             {btn2Text}
             {btn2TooltipIsVisible && (
