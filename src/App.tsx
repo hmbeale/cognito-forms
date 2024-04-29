@@ -19,34 +19,28 @@ function App() {
   };
 
   const toggleTooltipVisibilityBtn1 = () => {
-    isElOverFlown("btn1")
-      ? setbtn1TooltipIsVisible(true)
-      : setbtn1TooltipIsVisible(false);
+    if (isElOverFlown("btn1")){
+      setbtn1TooltipIsVisible(true)
+    }
   };
 
   const toggleTooltipVisibilityBtn2 = () => {
-    isElOverFlown("btn2")
-      ? setbtn2TooltipIsVisible(true)
-      : setbtn2TooltipIsVisible(false);
+    if (isElOverFlown("btn2")){
+      setbtn2TooltipIsVisible(true)
+    }
+
   };
 
-  const setBtn1ToolTipNotVisible = () => {
-    setbtn1TooltipIsVisible(false);
-  };
-
-  const setBtn2ToolTipNotVisible = () => {
-    setbtn2TooltipIsVisible(false);
-  };
 
   return (
     <>
       <section className="flex">
         <article className="wrapper">
           <button
-            className="text--truncated"
+            className="btn"
             id="btn1"
             onMouseEnter={toggleTooltipVisibilityBtn1}
-            onMouseLeave={setBtn1ToolTipNotVisible}
+            onMouseLeave={() => {setbtn1TooltipIsVisible(false)}}
           >
             {btn1Text}
             {btn1TooltipIsVisible && (
@@ -54,20 +48,20 @@ function App() {
             )}
           </button>
           <button
-            className="text--truncated"
+            className="btn"
             id="btn2"
             onMouseEnter={toggleTooltipVisibilityBtn2}
-            onMouseLeave={setBtn2ToolTipNotVisible}
+            onMouseLeave={() => {setbtn2TooltipIsVisible(false)}}
           >
             {btn2Text}
             {btn2TooltipIsVisible && (
               <span className="tooltip">{btn2Text}</span>
             )}
           </button>
-          <button className="text--truncated" id="cancelBtn">
+          <button className="btn" id="cancelBtn">
             Cancel
           </button>
-          <button className="text--truncated" id="saveBtn">
+          <button className="btn" id="saveBtn">
             Save
           </button>
         </article>
